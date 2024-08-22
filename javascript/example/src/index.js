@@ -14,6 +14,7 @@ customElements.define('urdf-viewer', URDFManipulator);
 // TODO: Remove this once modules or parcel is being used
 const viewer = document.querySelector('urdf-viewer');
 
+const stopButton = document.getElementById('stop-button');
 const limitsToggle = document.getElementById('ignore-joint-limits');
 const collisionToggle = document.getElementById('collision-toggle');
 const radiansToggle = document.getElementById('radians-toggle');
@@ -38,6 +39,10 @@ const setColor = color => {
 
 // Events
 // toggle checkbox
+stopButton.addEventListener('click', () => {
+    return "/stop";
+});
+
 limitsToggle.addEventListener('click', () => {
     limitsToggle.classList.toggle('checked');
     viewer.ignoreLimits = limitsToggle.classList.contains('checked');
